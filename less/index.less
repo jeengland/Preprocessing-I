@@ -91,7 +91,7 @@ nav {
 
 .intro {
 	background-color: rgba(0, 0, 0, .2);
-	padding: 10% 0 4%;
+	padding: 3% 0 4%;
 	h1 {
 		font-size: 3rem;
 		text-align: center;
@@ -116,6 +116,7 @@ nav {
 	h2 {
 		font-size: @sectionHeader;
 		text-align: center;
+		margin: 2% 0;
 	}
 	.skills-container {
 		display: flex;
@@ -150,14 +151,70 @@ nav {
 // ----- Styling for work history -----
 
 .history {
+	margin-top: 5%;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+	padding: 4% 0 10%;
+	background-color: rgba(0, 0, 0, .1);
+	h2 {
+		font-size: @sectionHeader;
+		text-align: center;
+		margin: 2% 0;
+	}
 	.job {
+		width: 80%;
+		margin: auto; 
+		h3 {
+			font-size: @contentHeader;
+			background-color: grey;
+			border-bottom: 1px dashed black;
+			padding: 1% 1%;
+			width: 100%;
+		}
+		.con {
+			width: auto;
+			padding-right: 2%;
+		}
+		.ex {
+			display: none;
+			width: auto;
+			padding-right: 2%;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
 		p {
 			display: none;
+			font-size: @contentText;
+			background-color: lightgrey;
+			padding: 1% 1%
+		}
+		ul {
+			display: none;
+			background-color: lightgrey;
+			padding: 1% 1%;
+			list-style: square;
+			list-style-position: inside;
+			font-size: @contentText;
+			border-bottom: black dashed 1px;
 		}
 		// Accordion menu code
 		&:target {
 			p {
 				display: block;
+			}
+			ul {
+				display: block;
+			}
+			.ex {
+				display: inline;
+			}
+			.con {
+				display: none;
 			}
 		}
 	}
