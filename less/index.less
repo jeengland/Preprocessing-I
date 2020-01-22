@@ -57,3 +57,60 @@ html, body {
     height: 100%;
 }
 
+// Variables
+
+
+
+// Styling for work history
+
+.history {
+	.job {
+		p {
+			display: none;
+		}
+		// Accordion menu code
+		&:target {
+			p {
+				display: block;
+			}
+		}//.job:target closing tag
+	}//.job closing tag
+}//.history closing tag
+
+// Styling for contact
+
+.card-face {
+	backface-visibility: hidden;
+	transition: transform .6s linear;
+	height: 480px;
+	width: 340px;
+	overflow: hidden;
+	border: 1px black solid;
+	border-radius: 10px;
+	position: absolute;
+	text-align: center;
+	top: 40%;
+	left: 30%;
+}
+
+.contact-card {
+	margin: 10% auto;
+	position: relative;
+	.front {
+		.card-face();
+		background-color: yellow;
+		transform: perspective(600px) rotatey(0deg);
+	}
+	.back {
+		.card-face();
+		transform: perspective(600px) rotateY(180deg);
+	}
+	&:hover {
+		.front {
+			transform: perspective(600px) rotateY(-180deg);
+		}
+		.back {
+			transform: perspective(600px) rotatey(0deg);
+		}
+	}
+}

@@ -134,3 +134,61 @@ html,
 body {
   height: 100%;
 }
+.history .job p {
+  display: none;
+}
+.history .job:target p {
+  display: block;
+}
+.card-face {
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  height: 480px;
+  width: 340px;
+  overflow: hidden;
+  border: 1px black solid;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+}
+.contact-card {
+  margin: 10% auto;
+  position: relative;
+}
+.contact-card .front {
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  height: 480px;
+  width: 340px;
+  overflow: hidden;
+  border: 1px black solid;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+  background-color: yellow;
+  transform: perspective(600px) rotatey(0deg);
+}
+.contact-card .back {
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  height: 480px;
+  width: 340px;
+  overflow: hidden;
+  border: 1px black solid;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+  transform: perspective(600px) rotateY(180deg);
+}
+.contact-card:hover .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.contact-card:hover .back {
+  transform: perspective(600px) rotatey(0deg);
+}
