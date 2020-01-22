@@ -270,7 +270,7 @@ nav ul li a {
 .card-face {
   backface-visibility: hidden;
   transition: transform 0.6s linear;
-  height: 480px;
+  height: 340px;
   width: 340px;
   overflow: hidden;
   border: 1px black solid;
@@ -280,14 +280,17 @@ nav ul li a {
   top: 40%;
   left: 30%;
 }
-.contact-card {
+.contact {
+  margin-bottom: 500px;
+}
+.contact .contact-card {
   margin: 10% auto;
   position: relative;
 }
-.contact-card .front {
+.contact .contact-card .front {
   backface-visibility: hidden;
   transition: transform 0.6s linear;
-  height: 480px;
+  height: 340px;
   width: 340px;
   overflow: hidden;
   border: 1px black solid;
@@ -299,10 +302,10 @@ nav ul li a {
   background-color: yellow;
   transform: perspective(600px) rotatey(0deg);
 }
-.contact-card .back {
+.contact .contact-card .back {
   backface-visibility: hidden;
   transition: transform 0.6s linear;
-  height: 480px;
+  height: 340px;
   width: 340px;
   overflow: hidden;
   border: 1px black solid;
@@ -313,9 +316,24 @@ nav ul li a {
   left: 30%;
   transform: perspective(600px) rotateY(180deg);
 }
-.contact-card:hover .front {
+.contact .contact-card:hover .front {
   transform: perspective(600px) rotateY(-180deg);
 }
-.contact-card:hover .back {
+.contact .contact-card:hover .back {
   transform: perspective(600px) rotatey(0deg);
+}
+footer {
+  width: 100%;
+  height: 5%;
+  margin-bottom: 1%;
+}
+footer p {
+  text-align: center;
+}
+footer p a {
+  text-decoration: none;
+  color: inherit;
+}
+footer p a:hover {
+  color: grey;
 }

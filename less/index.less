@@ -227,7 +227,7 @@ nav {
 .card-face {
 	backface-visibility: hidden;
 	transition: transform .6s linear;
-	height: 480px;
+	height: 340px;
 	width: 340px;
 	overflow: hidden;
 	border: 1px black solid;
@@ -238,24 +238,45 @@ nav {
 	left: 30%;
 }
 
-.contact-card {
-	margin: 10% auto;
-	position: relative;
-	.front {
-		.card-face();
-		background-color: yellow;
-		transform: perspective(600px) rotatey(0deg);
-	}
-	.back {
-		.card-face();
-		transform: perspective(600px) rotateY(180deg);
-	}
-	&:hover {
+.contact {
+	margin-bottom: 500px;
+	.contact-card {
+		margin: 10% auto;
+		position: relative;
 		.front {
-			transform: perspective(600px) rotateY(-180deg);
+			.card-face();
+			background-color: yellow;
+			transform: perspective(600px) rotatey(0deg);
 		}
 		.back {
-			transform: perspective(600px) rotatey(0deg);
+			.card-face();
+			transform: perspective(600px) rotateY(180deg);
+		}
+		&:hover {
+			.front {
+				transform: perspective(600px) rotateY(-180deg);
+			}
+			.back {
+				transform: perspective(600px) rotatey(0deg);
+			}
+		}
+	}
+}
+
+// ----- Styling for footer -----
+
+footer {
+	width: 100%;
+	height: 5%;
+	margin-bottom: 1%;
+	p {
+		text-align: center;
+		a {
+			text-decoration: none;
+			color: inherit;
+			&:hover {
+				color: grey;
+			}
 		}
 	}
 }
