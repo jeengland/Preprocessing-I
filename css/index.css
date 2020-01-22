@@ -86,7 +86,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 62.5%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -133,6 +133,43 @@ table {
 html,
 body {
   height: 100%;
+}
+.container {
+  width: 800px;
+  margin: auto;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+nav ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li a {
+  text-decoration: none;
+}
+.intro {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10% 0 4%;
+}
+.intro h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+.intro .intro-image {
+  margin-top: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.intro .intro-image img {
+  display: block;
+  max-width: 75%;
+  margin: auto;
+}
+.intro p {
+  font-size: 1.2rem;
+  margin: 3% 3% 0 3%;
 }
 .history .job p {
   display: none;

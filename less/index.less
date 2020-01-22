@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -59,9 +59,55 @@ html, body {
 
 // Variables
 
+// -----Styling for container-----
 
+.container {
+	width: 800px;
+	margin: auto;
+}
 
-// Styling for work history
+// -----Styling for navigation bar----- 
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	ul {
+		width: 40%;
+		display: flex;
+		justify-content: space-around;
+		li {
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// -----Styling for intro-----
+
+.intro {
+	background-color: rgba(0, 0, 0, .2);
+	padding: 10% 0 4%;
+	h1 {
+		font-size: 3rem;
+		text-align: center;
+	}
+	.intro-image {
+		margin-top: 2%;
+		background-color: rgba(0, 0, 0, .2);
+		img {
+			display: block;
+			max-width: 75%;
+			margin: auto;
+		}
+	}
+	p {
+		font-size: 1.2rem;
+		margin: 3% 3% 0 3%;
+	}
+}
+
+// -----Styling for work history-----
 
 .history {
 	.job {
@@ -73,12 +119,14 @@ html, body {
 			p {
 				display: block;
 			}
-		}//.job:target closing tag
-	}//.job closing tag
-}//.history closing tag
+		}
+	}
+}
 
-// Styling for contact
+// -----Styling for contact-----
 
+
+// Mixin for card faces
 .card-face {
 	backface-visibility: hidden;
 	transition: transform .6s linear;
