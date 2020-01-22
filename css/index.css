@@ -171,6 +171,35 @@ nav ul li a {
   font-size: 1.2rem;
   margin: 3% 3% 0 3%;
 }
+.skills h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+.skills .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.skills .skills-container .box {
+  width: 50%;
+}
+.skills .skills-container .text {
+  font-size: 1.1rem;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+.skills .skills-container .text h3 {
+  font-size: 1.3rem;
+}
+.skills .skills-container .text:nth-child(3) {
+  padding-left: 0;
+}
+.skills .skills-container .text p {
+  margin-top: 2%;
+}
+.skills .skills-container .image img {
+  max-width: 100%;
+}
 .history .job p {
   display: none;
 }

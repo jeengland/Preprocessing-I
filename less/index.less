@@ -59,14 +59,18 @@ html, body {
 
 // Variables
 
-// -----Styling for container-----
+@contentText: 1.1rem;
+@contentHeader: 1.3rem;
+@sectionHeader: 2rem;
+
+// ----- Styling for container -----
 
 .container {
 	width: 800px;
 	margin: auto;
 }
 
-// -----Styling for navigation bar----- 
+// ----- Styling for navigation bar ----- 
 
 nav {
 	display: flex;
@@ -83,7 +87,7 @@ nav {
 	}
 }
 
-// -----Styling for intro-----
+// ----- Styling for intro -----
 
 .intro {
 	background-color: rgba(0, 0, 0, .2);
@@ -107,7 +111,43 @@ nav {
 	}
 }
 
-// -----Styling for work history-----
+// ----- Styling for skills section -----
+.skills {
+	h2 {
+		font-size: @sectionHeader;
+		text-align: center;
+	}
+	.skills-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.box {
+			width: 50%;
+		}
+		.text {
+			font-size: @contentText;
+			padding-left: 1%;
+			padding-top: 1%;
+			h3 {
+				font-size: @contentHeader;
+			}
+			// Remove padding from left textbox
+			&:nth-child(3) {
+				padding-left: 0;
+			}
+			p {
+				margin-top: 2%;
+			}
+		}
+		.image {
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+// ----- Styling for work history -----
 
 .history {
 	.job {
@@ -123,7 +163,7 @@ nav {
 	}
 }
 
-// -----Styling for contact-----
+// ----- Styling for contact -----
 
 
 // Mixin for card faces
