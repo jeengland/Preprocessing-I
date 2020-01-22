@@ -299,8 +299,15 @@ nav ul li a {
   text-align: center;
   top: 40%;
   left: 30%;
-  background-color: yellow;
+  background-image: url(../img/skills1.jpg);
   transform: perspective(600px) rotatey(0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact-card .front h2 {
+  font-size: 2rem;
+  color: white;
 }
 .contact .contact-card .back {
   backface-visibility: hidden;
@@ -315,6 +322,25 @@ nav ul li a {
   top: 40%;
   left: 30%;
   transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.contact .contact-card .back ul {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+.contact .contact-card .back ul li {
+  text-align: center;
+}
+.contact .contact-card .back ul li:hover {
+  color: grey;
+}
+.contact .contact-card .back ul a {
+  text-decoration: none;
+  color: inherit;
 }
 .contact .contact-card:hover .front {
   transform: perspective(600px) rotateY(-180deg);

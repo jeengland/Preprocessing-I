@@ -245,12 +245,38 @@ nav {
 		position: relative;
 		.front {
 			.card-face();
-			background-color: yellow;
+			background-image: url(../img/skills1.jpg);
 			transform: perspective(600px) rotatey(0deg);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			h2 {
+				font-size: @sectionHeader;
+				color: white;
+			}
 		}
 		.back {
 			.card-face();
 			transform: perspective(600px) rotateY(180deg);
+			display: flex;
+			background-color: rgba(0, 0, 0, .2);
+			ul {
+				font-size: @contentHeader;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				width: 100%;
+				li {
+					text-align: center;
+					&:hover {
+						color: grey;
+					}
+				}
+				a {
+					text-decoration: none;
+					color: inherit;
+				}
+			}
 		}
 		&:hover {
 			.front {
