@@ -1,0 +1,423 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+}
+.container {
+  width: 800px;
+  margin: auto;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+nav ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li a {
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+.intro {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3% 0 4%;
+}
+.intro h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+.intro .intro-image {
+  margin-top: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.intro .intro-image img {
+  display: block;
+  max-width: 75%;
+  margin: auto;
+}
+.intro p {
+  font-size: 1.2rem;
+  margin: 3% 3% 0 3%;
+}
+@media (max-width: 500px) {
+  .intro {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.skills {
+  width: 100%;
+}
+.skills h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2% 0;
+}
+.skills .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.skills .skills-container .box {
+  width: 50%;
+}
+.skills .skills-container .text {
+  font-size: 1.1rem;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+.skills .skills-container .text h3 {
+  font-size: 1.3rem;
+}
+.skills .skills-container .text:nth-child(3) {
+  padding-left: 0;
+}
+.skills .skills-container .text p {
+  margin-top: 2%;
+}
+.skills .skills-container .image img {
+  max-width: 100%;
+}
+@media (max-width: 500px) {
+  .skills .skills-container {
+    flex-direction: column;
+  }
+  .skills .skills-container img {
+    display: none;
+  }
+  .skills .skills-container .box {
+    width: 100%;
+  }
+}
+.history {
+  width: 100%;
+  margin-top: 5%;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  padding: 4% 0 10%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.history h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2% 0;
+}
+.history .job {
+  width: 80%;
+  margin: auto;
+}
+.history .job h3 {
+  font-size: 1.3rem;
+  background-color: grey;
+  border-bottom: 1px dashed black;
+  padding: 1% 1%;
+  width: 100%;
+}
+.history .job .con {
+  width: auto;
+  padding-right: 2%;
+}
+.history .job .ex {
+  display: none;
+  width: auto;
+  padding-right: 2%;
+}
+.history .job a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.history .job p {
+  display: none;
+  font-size: 1.1rem;
+  background-color: lightgrey;
+  padding: 1% 1%;
+}
+.history .job ul {
+  display: none;
+  background-color: lightgrey;
+  padding: 1% 1%;
+  list-style: square;
+  list-style-position: inside;
+  font-size: 1.1rem;
+  border-bottom: black dashed 1px;
+}
+.history .job:target p {
+  display: block;
+}
+.history .job:target ul {
+  display: block;
+}
+.history .job:target .ex {
+  display: inline;
+}
+.history .job:target .con {
+  display: none;
+}
+.card-face {
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  height: 340px;
+  width: 340px;
+  overflow: hidden;
+  border: 1px black solid;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+}
+@media (max-width: 500px) {
+  .card-face {
+    position: initial;
+  }
+}
+.contact {
+  width: 100%;
+}
+.contact .contact-card {
+  margin: 10% auto;
+  position: relative;
+}
+.contact .contact-card .front {
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  height: 340px;
+  width: 340px;
+  overflow: hidden;
+  border: 1px black solid;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+  background-image: url(../img/skills1.jpg);
+  transform: perspective(600px) rotatey(0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .contact .contact-card .front {
+    position: initial;
+  }
+}
+.contact .contact-card .front h2 {
+  font-size: 2rem;
+  color: white;
+}
+.contact .contact-card .back {
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  height: 340px;
+  width: 340px;
+  overflow: hidden;
+  border: 1px black solid;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+  transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 500px) {
+  .contact .contact-card .back {
+    position: initial;
+  }
+}
+.contact .contact-card .back ul {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+.contact .contact-card .back ul li {
+  text-align: center;
+}
+.contact .contact-card .back ul li:hover {
+  color: grey;
+}
+.contact .contact-card .back ul a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact .contact-card:hover .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.contact .contact-card:hover .back {
+  transform: perspective(600px) rotatey(0deg);
+}
+@media (max-width: 500px) {
+  .contact .contact-card .front {
+    display: none;
+  }
+  .contact .contact-card .back {
+    transform: perspective(600px) rotatey(0deg);
+  }
+}
+footer {
+  width: 100%;
+  height: 5%;
+  margin-bottom: 1%;
+}
+footer p {
+  text-align: center;
+}
+footer p a {
+  text-decoration: none;
+  color: inherit;
+}
+footer p a:hover {
+  color: grey;
+}
