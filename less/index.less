@@ -50,18 +50,31 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body {
 	width: 100%;
 }
 
+// Font import
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
 // Variables
 
 @contentText: 1.1rem;
 @contentHeader: 1.3rem;
 @sectionHeader: 2rem;
+@mainFont: 'Roboto Slab', serif;
+
+// Mixin for link styling
+
+.linkStyle {
+	text-decoration: none;
+	color: inherit;
+	font-family: @mainFont;
+}
 
 // ----- Styling for container -----
 
@@ -87,8 +100,7 @@ nav {
 		justify-content: space-between;
 		li {
 			a{
-				text-decoration: none;
-				color: inherit;
+				.linkStyle();
 				font-size: @contentText;
 			}
 			&:hover {
@@ -122,6 +134,7 @@ nav {
 	h1 {
 		font-size: 3rem;
 		text-align: center;
+		font-family: @mainFont;
 	}
 	.intro-image {
 		margin-top: 2%;
@@ -135,6 +148,7 @@ nav {
 	p {
 		font-size: 1.2rem;
 		margin: 3% 3% 0 3%;
+		font-family: @mainFont;
 	}
 	@media (max-width: 500px) {
 		display: flex;
@@ -146,6 +160,7 @@ nav {
 // ----- Styling for skills section -----
 .skills {
 	width: 100%;
+	font-family: @mainFont;
 	h2 {
 		font-size: @sectionHeader;
 		text-align: center;
@@ -205,6 +220,7 @@ nav {
 // ----- Styling for work history -----
 
 .history {
+	font-family: @mainFont;
 	width: 100%;
 	margin-top: 5%;
 	border-top: 1px black solid;
@@ -301,6 +317,7 @@ nav {
 }
 
 .contact {
+	font-family: @mainFont;
 	width: 100%;
 	margin-bottom: 500px;
 	.mobile-title {
@@ -343,8 +360,7 @@ nav {
 					}
 				}
 				a {
-					text-decoration: none;
-					color: inherit;
+					.linkStyle();
 				}
 			}
 		}
@@ -376,14 +392,14 @@ nav {
 // ----- Styling for footer -----
 
 footer {
+	font-family: @mainFont;
 	width: 100%;
 	height: 5%;
 	margin-bottom: 1%;
 	p {
 		text-align: center;
 		a {
-			text-decoration: none;
-			color: inherit;
+			.linkStyle();
 			&:hover {
 				color: grey;
 			}
