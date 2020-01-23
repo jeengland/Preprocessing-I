@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -54,6 +54,293 @@ table {
 }
 
 html, body {
-    height: 100%;
+	width: 100%;
 }
 
+// Variables
+
+@contentText: 1.1rem;
+@contentHeader: 1.3rem;
+@sectionHeader: 2rem;
+
+// ----- Styling for container -----
+
+.container {
+	width: 800px;
+	margin: auto;
+	@media (max-width: 500px) {
+		width: 100%;
+		overflow-x: hidden;
+	}
+}
+
+// ----- Styling for navigation bar ----- 
+
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	ul {
+		width: 40%;
+		display: flex;
+		justify-content: space-around;
+		li {
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+	@media (max-width: 500px) {
+		ul {
+			flex-direction: column;
+		}
+	}
+}
+
+// ----- Styling for intro -----
+
+.intro {
+	width: 100%;
+	background-color: rgba(0, 0, 0, .2);
+	padding: 3% 0 4%;
+	h1 {
+		font-size: 3rem;
+		text-align: center;
+	}
+	.intro-image {
+		margin-top: 2%;
+		background-color: rgba(0, 0, 0, .2);
+		img {
+			display: block;
+			max-width: 75%;
+			margin: auto;
+		}
+	}
+	p {
+		font-size: 1.2rem;
+		margin: 3% 3% 0 3%;
+	}
+	@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+}
+
+// ----- Styling for skills section -----
+.skills {
+	width: 100%;
+	h2 {
+		font-size: @sectionHeader;
+		text-align: center;
+		margin: 2% 0;
+	}
+	.skills-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.box {
+			width: 50%;
+		}
+		.text {
+			font-size: @contentText;
+			padding-left: 1%;
+			padding-top: 1%;
+			h3 {
+				font-size: @contentHeader;
+			}
+			// Remove padding from left textbox
+			&:nth-child(3) {
+				padding-left: 0;
+			}
+			p {
+				margin-top: 2%;
+			}
+		}
+		.image {
+			img {
+				max-width: 100%;
+			}
+		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+			img {
+				display: none;
+			}
+			.box {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// ----- Styling for work history -----
+
+.history {
+	width: 100%;
+	margin-top: 5%;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+	padding: 4% 0 10%;
+	background-color: rgba(0, 0, 0, .1);
+	h2 {
+		font-size: @sectionHeader;
+		text-align: center;
+		margin: 2% 0;
+	}
+	.job {
+		width: 80%;
+		margin: auto; 
+		h3 {
+			font-size: @contentHeader;
+			background-color: grey;
+			border-bottom: 1px dashed black;
+			padding: 1% 1%;
+			width: 100%;
+		}
+		.con {
+			width: auto;
+			padding-right: 2%;
+		}
+		.ex {
+			display: none;
+			width: auto;
+			padding-right: 2%;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+		p {
+			display: none;
+			font-size: @contentText;
+			background-color: lightgrey;
+			padding: 1% 1%
+		}
+		ul {
+			display: none;
+			background-color: lightgrey;
+			padding: 1% 1%;
+			list-style: square;
+			list-style-position: inside;
+			font-size: @contentText;
+			border-bottom: black dashed 1px;
+		}
+		// Accordion menu code
+		&:target {
+			p {
+				display: block;
+			}
+			ul {
+				display: block;
+			}
+			.ex {
+				display: inline;
+			}
+			.con {
+				display: none;
+			}
+		}
+	}
+}
+
+// ----- Styling for contact -----
+
+
+// Mixin for card faces
+.card-face {
+	backface-visibility: hidden;
+	transition: transform .6s linear;
+	height: 340px;
+	width: 340px;
+	overflow: hidden;
+	border: 1px black solid;
+	border-radius: 10px;
+	position: absolute;
+	text-align: center;
+	top: 40%;
+	left: 30%;
+	@media (max-width: 500px) {
+		position: initial
+	}
+}
+
+.contact {
+	width: 100%;
+	.contact-card {
+		margin: 10% auto;
+		position: relative;
+		.front {
+			.card-face();
+			background-image: url(../img/skills1.jpg);
+			transform: perspective(600px) rotatey(0deg);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			h2 {
+				font-size: @sectionHeader;
+				color: white;
+			}
+		}
+		.back {
+			.card-face();
+			transform: perspective(600px) rotateY(180deg);
+			display: flex;
+			background-color: rgba(0, 0, 0, .2);
+			ul {
+				font-size: @contentHeader;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				width: 100%;
+				li {
+					text-align: center;
+					&:hover {
+						color: grey;
+					}
+				}
+				a {
+					text-decoration: none;
+					color: inherit;
+				}
+			}
+		}
+		&:hover {
+			.front {
+				transform: perspective(600px) rotateY(-180deg);
+			}
+			.back {
+				transform: perspective(600px) rotatey(0deg);
+			}
+		}
+		@media (max-width: 500px) {
+			.front {
+				display: none;
+			}
+			.back {
+				transform: perspective(600px) rotatey(0deg);
+			}
+		}
+	}
+}
+
+// ----- Styling for footer -----
+
+footer {
+	width: 100%;
+	height: 5%;
+	margin-bottom: 1%;
+	p {
+		text-align: center;
+		a {
+			text-decoration: none;
+			color: inherit;
+			&:hover {
+				color: grey;
+			}
+		}
+	}
+}
