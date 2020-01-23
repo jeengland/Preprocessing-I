@@ -78,21 +78,37 @@ html, body {
 
 nav {
 	width: 100%;
+	margin: 2% 0;
 	display: flex;
 	justify-content: flex-end;
 	ul {
 		width: 40%;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		li {
 			a{
 				text-decoration: none;
+				color: inherit;
+				font-size: @contentText;
+			}
+			&:hover {
+				color: gray;
 			}
 		}
 	}
 	@media (max-width: 500px) {
+		justify-content: center;
 		ul {
 			flex-direction: column;
+			width: 100%;
+			padding-top: 0;
+			margin-top: -2%;
+			li {
+				text-align: center;
+				width: 100%;
+				border-bottom: black solid 1px;
+				padding: 2% 0%;
+			}
 		}
 	}
 }
@@ -123,7 +139,7 @@ nav {
 	@media (max-width: 500px) {
 		display: flex;
 		flex-direction: column;
-		padding: 0;
+		margin-bottom: 7%;
 	}
 }
 
@@ -169,6 +185,18 @@ nav {
 			}
 			.box {
 				width: 100%;
+			}
+			.text{
+				margin-bottom: 3%;
+				padding: 2% 1%;
+				border-top: black dashed 1px;
+				&:nth-child(3) {
+					padding-left: 1%;
+				}
+				&:nth-child(6) {
+					border-bottom: black dashed 1px;
+					padding-bottom: 5%;
+				}
 			}
 		}
 	}
@@ -262,20 +290,32 @@ nav {
 	position: absolute;
 	text-align: center;
 	top: 40%;
-	left: 30%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0 auto;
 	@media (max-width: 500px) {
-		position: initial
+		position: initial;
+		margin: auto;
 	}
 }
 
 .contact {
 	width: 100%;
+	margin-bottom: 500px;
+	.mobile-title {
+		width: 100%;
+		text-align: center;
+		font-size: @sectionHeader;
+		margin-top: 5%;
+		display: none;
+	}
 	.contact-card {
 		margin: 10% auto;
 		position: relative;
 		.front {
 			.card-face();
-			background-image: url(../img/skills1.jpg);
+			background-image: url(../img/contact.jpg);
 			transform: perspective(600px) rotatey(0deg);
 			display: flex;
 			justify-content: center;
@@ -323,6 +363,12 @@ nav {
 			.back {
 				transform: perspective(600px) rotatey(0deg);
 			}
+		}
+	}
+	@media (max-width: 500px) {
+		margin-bottom: 0;
+		.mobile-title {
+			display: block;
 		}
 	}
 }

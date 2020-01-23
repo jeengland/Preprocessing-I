@@ -146,20 +146,38 @@ body {
 }
 nav {
   width: 100%;
+  margin: 2% 0;
   display: flex;
   justify-content: flex-end;
 }
 nav ul {
   width: 40%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 nav ul li a {
   text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+}
+nav ul li:hover {
+  color: gray;
 }
 @media (max-width: 500px) {
+  nav {
+    justify-content: center;
+  }
   nav ul {
     flex-direction: column;
+    width: 100%;
+    padding-top: 0;
+    margin-top: -2%;
+  }
+  nav ul li {
+    text-align: center;
+    width: 100%;
+    border-bottom: black solid 1px;
+    padding: 2% 0%;
   }
 }
 .intro {
@@ -188,7 +206,7 @@ nav ul li a {
   .intro {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    margin-bottom: 7%;
   }
 }
 .skills {
@@ -233,6 +251,18 @@ nav ul li a {
   }
   .skills .skills-container .box {
     width: 100%;
+  }
+  .skills .skills-container .text {
+    margin-bottom: 3%;
+    padding: 2% 1%;
+    border-top: black dashed 1px;
+  }
+  .skills .skills-container .text:nth-child(3) {
+    padding-left: 1%;
+  }
+  .skills .skills-container .text:nth-child(6) {
+    border-bottom: black dashed 1px;
+    padding-bottom: 5%;
   }
 }
 .history {
@@ -313,15 +343,27 @@ nav ul li a {
   position: absolute;
   text-align: center;
   top: 40%;
-  left: 30%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
 }
 @media (max-width: 500px) {
   .card-face {
     position: initial;
+    margin: auto;
   }
 }
 .contact {
   width: 100%;
+  margin-bottom: 500px;
+}
+.contact .mobile-title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 5%;
+  display: none;
 }
 .contact .contact-card {
   margin: 10% auto;
@@ -338,8 +380,11 @@ nav ul li a {
   position: absolute;
   text-align: center;
   top: 40%;
-  left: 30%;
-  background-image: url(../img/skills1.jpg);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  background-image: url(../img/contact.jpg);
   transform: perspective(600px) rotatey(0deg);
   display: flex;
   justify-content: center;
@@ -348,6 +393,7 @@ nav ul li a {
 @media (max-width: 500px) {
   .contact .contact-card .front {
     position: initial;
+    margin: auto;
   }
 }
 .contact .contact-card .front h2 {
@@ -365,7 +411,10 @@ nav ul li a {
   position: absolute;
   text-align: center;
   top: 40%;
-  left: 30%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
   transform: perspective(600px) rotateY(180deg);
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
@@ -373,6 +422,7 @@ nav ul li a {
 @media (max-width: 500px) {
   .contact .contact-card .back {
     position: initial;
+    margin: auto;
   }
 }
 .contact .contact-card .back ul {
@@ -404,6 +454,14 @@ nav ul li a {
   }
   .contact .contact-card .back {
     transform: perspective(600px) rotatey(0deg);
+  }
+}
+@media (max-width: 500px) {
+  .contact {
+    margin-bottom: 0;
+  }
+  .contact .mobile-title {
+    display: block;
   }
 }
 footer {
