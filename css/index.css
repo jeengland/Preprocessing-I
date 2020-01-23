@@ -132,13 +132,20 @@ table {
 }
 html,
 body {
-  height: 100%;
+  width: 100%;
 }
 .container {
   width: 800px;
   margin: auto;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
 nav {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -150,7 +157,13 @@ nav ul {
 nav ul li a {
   text-decoration: none;
 }
+@media (max-width: 500px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
 .intro {
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 3% 0 4%;
 }
@@ -170,6 +183,16 @@ nav ul li a {
 .intro p {
   font-size: 1.2rem;
   margin: 3% 3% 0 3%;
+}
+@media (max-width: 500px) {
+  .intro {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.skills {
+  width: 100%;
 }
 .skills h2 {
   font-size: 2rem;
@@ -201,7 +224,19 @@ nav ul li a {
 .skills .skills-container .image img {
   max-width: 100%;
 }
+@media (max-width: 500px) {
+  .skills .skills-container {
+    flex-direction: column;
+  }
+  .skills .skills-container img {
+    display: none;
+  }
+  .skills .skills-container .box {
+    width: 100%;
+  }
+}
 .history {
+  width: 100%;
   margin-top: 5%;
   border-top: 1px black solid;
   border-bottom: 1px black solid;
@@ -280,8 +315,13 @@ nav ul li a {
   top: 40%;
   left: 30%;
 }
+@media (max-width: 500px) {
+  .card-face {
+    position: initial;
+  }
+}
 .contact {
-  margin-bottom: 500px;
+  width: 100%;
 }
 .contact .contact-card {
   margin: 10% auto;
@@ -305,6 +345,11 @@ nav ul li a {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .contact .contact-card .front {
+    position: initial;
+  }
+}
 .contact .contact-card .front h2 {
   font-size: 2rem;
   color: white;
@@ -324,6 +369,11 @@ nav ul li a {
   transform: perspective(600px) rotateY(180deg);
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 500px) {
+  .contact .contact-card .back {
+    position: initial;
+  }
 }
 .contact .contact-card .back ul {
   font-size: 1.3rem;
@@ -347,6 +397,14 @@ nav ul li a {
 }
 .contact .contact-card:hover .back {
   transform: perspective(600px) rotatey(0deg);
+}
+@media (max-width: 500px) {
+  .contact .contact-card .front {
+    display: none;
+  }
+  .contact .contact-card .back {
+    transform: perspective(600px) rotatey(0deg);
+  }
 }
 footer {
   width: 100%;

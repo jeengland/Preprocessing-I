@@ -54,7 +54,7 @@ table {
 }
 
 html, body {
-    height: 100%;
+	width: 100%;
 }
 
 // Variables
@@ -68,11 +68,16 @@ html, body {
 .container {
 	width: 800px;
 	margin: auto;
+	@media (max-width: 500px) {
+		width: 100%;
+		overflow-x: hidden;
+	}
 }
 
 // ----- Styling for navigation bar ----- 
 
 nav {
+	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	ul {
@@ -85,11 +90,17 @@ nav {
 			}
 		}
 	}
+	@media (max-width: 500px) {
+		ul {
+			flex-direction: column;
+		}
+	}
 }
 
 // ----- Styling for intro -----
 
 .intro {
+	width: 100%;
 	background-color: rgba(0, 0, 0, .2);
 	padding: 3% 0 4%;
 	h1 {
@@ -109,10 +120,16 @@ nav {
 		font-size: 1.2rem;
 		margin: 3% 3% 0 3%;
 	}
+	@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
 }
 
 // ----- Styling for skills section -----
 .skills {
+	width: 100%;
 	h2 {
 		font-size: @sectionHeader;
 		text-align: center;
@@ -145,12 +162,22 @@ nav {
 				max-width: 100%;
 			}
 		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+			img {
+				display: none;
+			}
+			.box {
+				width: 100%;
+			}
+		}
 	}
 }
 
 // ----- Styling for work history -----
 
 .history {
+	width: 100%;
 	margin-top: 5%;
 	border-top: 1px black solid;
 	border-bottom: 1px black solid;
@@ -236,10 +263,13 @@ nav {
 	text-align: center;
 	top: 40%;
 	left: 30%;
+	@media (max-width: 500px) {
+		position: initial
+	}
 }
 
 .contact {
-	margin-bottom: 500px;
+	width: 100%;
 	.contact-card {
 		margin: 10% auto;
 		position: relative;
@@ -281,6 +311,14 @@ nav {
 		&:hover {
 			.front {
 				transform: perspective(600px) rotateY(-180deg);
+			}
+			.back {
+				transform: perspective(600px) rotatey(0deg);
+			}
+		}
+		@media (max-width: 500px) {
+			.front {
+				display: none;
 			}
 			.back {
 				transform: perspective(600px) rotatey(0deg);
